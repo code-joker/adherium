@@ -26,7 +26,7 @@ ng version
 ### 2. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/code-joker/adherium.git
 cd adherium
 ```
 
@@ -39,7 +39,7 @@ npm install
 ### 4. Start the development server
 
 ```bash
-ng serve
+ng serve -o
 ```
 
 Then open the application in your browser:
