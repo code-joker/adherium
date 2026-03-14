@@ -23,8 +23,6 @@ node -v
 ng version
 ```
 
----
-
 ### 2. Clone the repository
 
 ```bash
@@ -32,15 +30,11 @@ git clone <repository-url>
 cd adherium
 ```
 
----
-
 ### 3. Install dependencies
 
 ```bash
 npm install
 ```
-
----
 
 ### 4. Start the development server
 
@@ -53,8 +47,6 @@ Then open the application in your browser:
 ```
 http://localhost:4200
 ```
-
----
 
 ### Note about Tailwind
 
@@ -219,16 +211,6 @@ If this dashboard were backed by a production system, the data would be served b
 
 The API would be designed with **performance and payload efficiency in mind**, since adherence dashboards often require frequent reads of time-series data.
 
----
-
-## Endpoints
-
-Rather than exposing a single generic endpoint, I would separate **controller medication** and **rescue medication** endpoints.
-
-Controller inhalers are typically used **daily and consistently**, and therefore drive the **adherence visualization**. Because they are accessed more frequently by the dashboard, isolating them allows us to return a smaller and more optimized payload.
-
-Rescue inhaler events are less frequent and often used during episodes, so they can be retrieved independently when needed.
-
 Additionally, the API should return data that is already prepared for analytical consumption. Whenever possible, the backend should handle transformations that would otherwise introduce duplicated logic across clients.
 
 For example, event data should be:
@@ -239,6 +221,16 @@ For example, event data should be:
 - **flattened as much as possible** to avoid deeply nested structures that increase parsing complexity on the client
 
 Derived calculations, such as adherence indicators or technique classifications, should ideally be computed on the backend. This ensures consistent interpretation across different clients and reduces processing overhead in the frontend.
+
+---
+
+## Endpoints
+
+Rather than exposing a single generic endpoint, I would separate **controller medication** and **rescue medication** endpoints.
+
+Controller inhalers are typically used **daily and consistently**, and therefore drive the **adherence visualization**. Because they are accessed more frequently by the dashboard, isolating them allows us to return a smaller and more optimized payload.
+
+Rescue inhaler events are less frequent and often used during episodes, so they can be retrieved independently when needed.
 
 ### Controller Medication Events
 
@@ -450,5 +442,3 @@ Add a clearer high-level summary panel that surfaces the most important signals 
 - alerts for concerning adherence patterns
 - technique quality trends
 - quick patient adherence indicators
-
----
