@@ -1,0 +1,44 @@
+<div class="rounded-lg bg-white shadow-sm p-8 h-full text-lg">
+  <div class="flex gap-8">
+    <div>
+      <span
+        class="inline-block size-14 overflow-hidden rounded-full bg-gray-100 outline -outline-offset-1 outline-black/5"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" class="size-full text-gray-300">
+          <path
+            d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"
+          />
+        </svg>
+      </span>
+    </div>
+    <div>
+      <p class="mb-2">
+        <strong class="font-semibold">Patient:</strong>
+        {{ patient.initials }} ({{ patient.age }})
+      </p>
+      <p class="mb-2">
+        <strong class="font-semibold">Condition:</strong>
+        {{ patient.condition.name }}
+      </p>
+
+      <p class="mb-2">
+        <strong class="font-semibold">Medication:</strong>
+        {{ medication.medicationName }}
+      </p>
+
+      <p class="mb-2">
+        <strong class="font-semibold">Controller adherence:</strong> {{ medication.adherence }}%
+      </p>
+
+      <p class="mb-2">
+        <strong class="font-semibold">Expected doses:</strong> {{ medication.expectedDoses }}
+      </p>
+
+      <p class="mb-2"><strong class="font-semibold">Missed doses:</strong> {{ missed }}</p>
+      <p>
+        <strong class="font-semibold">Rescue inhaler uses:</strong>
+        {{ rescueCount }}
+      </p>
+    </div>
+  </div>
+</div>

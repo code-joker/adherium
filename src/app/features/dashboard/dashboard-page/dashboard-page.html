@@ -1,0 +1,27 @@
+<h1 class="text-3xl mb-6 text-orange-600">Dashboard</h1>
+
+@if (loading()) {
+  <h2>Loading...</h2>
+} @else {
+  <div class="grid gap-x-4 gap-y-4 grid-cols-6">
+    <div class="col-span-3">
+      <app-patient-summary
+        [patient]="patient!"
+        [medication]="medication"
+        [rescueCount]="rescueCount"
+      ></app-patient-summary>
+    </div>
+    <!-- Adherence Gauge -->
+    <section class="col-span-3">
+      <app-adherence-gauge [medication]="medication"> </app-adherence-gauge>
+    </section>
+    <!-- Adherence Trend -->
+    <section class="col-span-6">
+      <app-adherence-trends [medication]="medication"></app-adherence-trends>
+    </section>
+    <!-- Technique Trend -->
+    <section class="col-span-6">
+      <app-technique-trend [medications]="medications"></app-technique-trend>
+    </section>
+  </div>
+}

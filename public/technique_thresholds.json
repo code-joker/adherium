@@ -1,0 +1,30 @@
+{
+  "technique_thresholds": {
+    "_note": "Reference data for clinical display. These thresholds define quality bands for each technique metric captured by Hailie sensors.",
+    "shake_duration": {
+      "good": { "value": 3000, "unit": "ms" },
+      "acceptable": { "value": 2000, "unit": "ms" },
+      "description": "Duration of device shake before inhalation"
+    },
+    "inspiratory_time": {
+      "good": { "value": 2800, "unit": "ms" },
+      "acceptable": { "value": 2000, "unit": "ms" },
+      "description": "Duration of inhalation"
+    },
+    "peak_inspiratory_flow_rate": {
+      "good": { "value": 60, "unit": "L/min" },
+      "acceptable": { "value": 45, "unit": "L/min" },
+      "description": "Peak inspiratory flow rate"
+    },
+    "device_orientation": {
+      "good": { "value": 15, "unit": "deg" },
+      "acceptable": { "value": 30, "unit": "deg" },
+      "description": "Device angle from vertical (lower is better)"
+    },
+    "estimated_delivered_volume": {
+      "good": { "value": 1.8, "unit": "mL" },
+      "acceptable": { "value": 1.2, "unit": "mL" },
+      "description": "Estimated inhaled medication volume"
+    }
+  }
+}

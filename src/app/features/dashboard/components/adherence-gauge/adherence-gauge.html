@@ -1,0 +1,15 @@
+<div class="rounded-lg bg-white shadow-sm p-4">
+  <h2 class="text-xl font-semibold mb-2">Adherence</h2>
+
+  <div class="relative w-full h-64">
+    <canvas baseChart [type]="chartType" [data]="chartData" [options]="chartOptions"> </canvas>
+
+    <div class="absolute inset-0 flex flex-col items-center justify-end pointer-events-none mb-6">
+      <div class="text-3xl font-bold">{{ percentage }}%</div>
+
+      <div class="text-sm text-gray-500">Adherence</div>
+
+      <div class="text-sm text-gray-500">{{ taken }} / {{ expected }}</div>
+    </div>
+  </div>
+</div>
